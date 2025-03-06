@@ -109,6 +109,9 @@ module.exports = {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-192px)" },
         },
+        "gradient-angle": {
+          to: { '--gradient-angle': '360deg' }
+        },        
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,6 +126,7 @@ module.exports = {
         "rise-slow": "rise-slow 15s linear infinite",
         "rise-medium": "rise-medium 10s linear infinite",
         "rise-fast": "rise-fast 7s linear infinite",
+        "gradient-angle": "gradient-angle 8s linear infinite",
       },
     },
   },

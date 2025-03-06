@@ -14,7 +14,7 @@ const blogPosts = [
       "Explore the new features and improvements in Next.js 15 and how they can enhance your development workflow.",
     date: "Mar 15, 2024",
     readTime: "5 min read",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/blog/blog-1.png?height=400&width=600",
     slug: "/blog/building-modern-web-applications",
   },
   {
@@ -23,7 +23,7 @@ const blogPosts = [
       "Learn how to apply Apple's design principles to create beautiful, intuitive, and functional web experiences.",
     date: "Mar 10, 2024",
     readTime: "7 min read",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/blog/blog-2.png?height=400&width=600",
     slug: "/blog/designing-with-apples-philosophy",
   },
   {
@@ -31,7 +31,7 @@ const blogPosts = [
     excerpt: "Discover techniques and best practices for improving the performance of your React applications.",
     date: "Mar 5, 2024",
     readTime: "6 min read",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/blog/blog-3.png?height=400&width=600",
     slug: "/blog/optimizing-performance-react-applications",
   },
 ]

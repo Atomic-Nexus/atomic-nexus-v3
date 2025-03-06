@@ -13,9 +13,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Luminous - Apple-Inspired Next.js Starter",
-  description: "A beautiful and modern Next.js starter inspired by Apple's design philosophy",
-    generator: 'v0.dev'
+  title: 'Atomic Nexus - AI Education and Strategic Consulting',
+  description:
+      'Atomic Nexus empowers forward-thinking entrepreneurs with AI education and strategic consulting. Drive growth, enhance customer experiences, and optimize operations.',
+  keywords:
+      'AI, Automation, Consulting, Education, Strategy, Business, Innovation, SaaS, Startups'
 }
 
 export default function RootLayout({
@@ -25,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn("min-h-screen bg-rich-black font-sans antialiased", poppins.variable)}>
+      <body
+        className={cn("min-h-screen bg-rich-black font-sans antialiased", poppins.variable)}
+        suppressHydrationWarning={true}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
@@ -33,7 +38,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

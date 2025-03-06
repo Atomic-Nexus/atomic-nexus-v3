@@ -50,7 +50,7 @@ const ServiceCard = ({
   imageAlt,
 }) => {
   return (
-    <div className="bg-russian-violet/30 border border-[rgba(255,184,0,0.3)] rounded-xl overflow-hidden">
+    <div className="bg-russian-violet/60 border border-[rgba(255,184,0,0.3)] rounded-xl overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column - Content */}
         <div className="p-8">
@@ -102,8 +102,10 @@ const ServiceCard = ({
         </div>
 
         {/* Right Column - Image */}
-        <div className="relative h-[300px] w-[300px] mx-auto md:mx-0">
-          <Image src={imageSrc || "/placeholder.svg"} alt={imageAlt} fill className="object-cover" sizes="300px" />
+        <div className="flex items-center justify-center h-full p-8">
+          <div className="relative h-[500px] w-[500px]">
+            <Image src={imageSrc || "/placeholder.svg"} alt={imageAlt} fill className="object-cover" sizes="500px" />
+          </div>
         </div>
       </div>
     </div>
@@ -154,7 +156,7 @@ export default function Offers() {
         "Actionable strategies to future-proof your business with AI",
       ],
       footerText: "Stay informed, stay ahead—learn how AI can work for you.",
-      imageSrc: "/AI-brain.png?height=300&width=300",
+      imageSrc: "/AI-brain.png?height=400&width=400",
       imageAlt: "AI Education",
     },
     {
@@ -181,7 +183,7 @@ export default function Offers() {
       ],
       footerText: "AI is not a one-size-fits-all solution. Get expert guidance before making your next move.",
       buttonText: "Book a Free Discovery Call",
-      imageSrc: "/AI-globe.png?height=300&width=300",
+      imageSrc: "/AI-globe.png?height=400&width=400",
       imageAlt: "AI Consulting",
     },
     {
@@ -206,7 +208,7 @@ export default function Offers() {
         "Ongoing strategic oversight so AI aligns with your goals",
       ],
       footerText: "I help you craft the strategy, and my expert partners bring it to life.",
-      imageSrc: "/Network.png?height=300&width=300",
+      imageSrc: "/Network.png?height=400&width=400",
       imageAlt: "AI Partners",
     },
   ]

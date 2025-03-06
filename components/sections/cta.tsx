@@ -52,14 +52,11 @@ export default function Cta() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <Button
-                size="lg"
-                className="relative inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white rounded-md cursor-pointer transition-colors duration-300 overflow-hidden
-                      before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#584827] before:via-[#c7a03c] before:to-[#584827] before:animate-gradient before:z-0
-                      relative z-10"
-              >
+              <div className="flex items-center justify-center">
+              <button className="cta-button">
                 Book Your Free AI Strategy Call
-              </Button>
+              </button>
+              </div>
             </motion.div>
           </div>
         </motion.div>

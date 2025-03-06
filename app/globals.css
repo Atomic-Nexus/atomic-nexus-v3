@@ -45,9 +45,6 @@
     --ring: var(--blue-violet);
 
     --radius: 0.5rem;
-
-    /* Custom property for the gradient angle */
-    --gradient-angle: 0turn;
   }
 }
 
@@ -69,6 +66,12 @@
   p {
     @apply text-cool-gray;
   }
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 @layer components {
@@ -100,35 +103,30 @@
     @apply bg-gradient-to-r from-blue-violet via-electric-cyan to-neon-magenta text-transparent bg-clip-text;
   }
 
-  /* Card with animated border */
-  .card-with-border {
-    position: relative;
+  .cta-button {
+    @apply px-10 py-5 text-xl font-semibold text-white rounded-lg cursor-pointer 
+           transition-colors duration-300 ease-in-out border border-transparent
+           animate-gradient-angle;
+    background-image: linear-gradient(#030014, #190e36),
+      conic-gradient(
+        from var(--gradient-angle),
+        #584827 0%,
+        #c7a03c 37%,
+        #f9de90 30%,
+        #c7a03c 33%,
+        #584827 40%,
+        #584827 50%,
+        #c7a03c 77%,
+        #f9de90 80%,
+        #c7a03c 83%,
+        #584827 90%
+      );
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
   }
 
-  .card-with-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem; /* xl rounded corners */
-    padding: 2px; /* Border width */
-    background: conic-gradient(
-      from var(--gradient-angle),
-      hsl(43, 100%, 50%) 0%,
-      transparent 10%,
-      transparent 90%,
-      hsl(43, 100%, 50%) 100%
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    animation: rotate-gradient 4s linear infinite;
-  }
-
-  @keyframes rotate-gradient {
-    to {
-      --gradient-angle: 1turn;
-    }
+  .cta-button:hover {
+    @apply text-[#ffb800];
   }
 }
 
