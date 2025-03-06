@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --rich-black: 249 100% 4%;
+    --russian-violet: 257 59% 13%;
+    --cool-gray: 244 8% 60%;
+    --white: 0 0% 100%;
+    --blue-violet: 262 89% 62%;
+    --electric-cyan: 181 79% 54%;
+    --neon-magenta: 336 100% 56%;
+    --luminous-gold: 43 100% 50%;
+
+    --background: var(--rich-black);
+    --foreground: var(--white);
+
+    --card: var(--russian-violet);
+    --card-foreground: var(--white);
+
+    --popover: var(--rich-black);
+    --popover-foreground: var(--white);
+
+    --primary: var(--blue-violet);
+    --primary-foreground: var(--white);
+
+    --secondary: var(--russian-violet);
+    --secondary-foreground: var(--white);
+
+    --muted: var(--russian-violet);
+    --muted-foreground: var(--cool-gray);
+
+    --accent: var(--electric-cyan);
+    --accent-foreground: var(--rich-black);
+
+    --destructive: var(--neon-magenta);
+    --destructive-foreground: var(--white);
+
+    --highlight: var(--luminous-gold);
+    --highlight-foreground: var(--rich-black);
+
+    --border: var(--russian-violet);
+    --input: var(--russian-violet);
+    --ring: var(--blue-violet);
+
+    --radius: 0.5rem;
+
+    /* Custom property for the gradient angle */
+    --gradient-angle: 0turn;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-white;
+  }
+  p {
+    @apply text-cool-gray;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold tracking-tight;
+  }
+
+  .paragraph {
+    @apply text-base md:text-lg text-cool-gray leading-relaxed;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-violet via-electric-cyan to-neon-magenta text-transparent bg-clip-text;
+  }
+
+  /* Card with animated border */
+  .card-with-border {
+    position: relative;
+  }
+
+  .card-with-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem; /* xl rounded corners */
+    padding: 2px; /* Border width */
+    background: conic-gradient(
+      from var(--gradient-angle),
+      hsl(43, 100%, 50%) 0%,
+      transparent 10%,
+      transparent 90%,
+      hsl(43, 100%, 50%) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: rotate-gradient 4s linear infinite;
+  }
+
+  @keyframes rotate-gradient {
+    to {
+      --gradient-angle: 1turn;
+    }
+  }
+}
+
