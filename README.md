@@ -30,8 +30,8 @@
 - **Next.js** (App Router & TypeScript)
 - **Tailwind CSS** for styling
 - **Framer Motion** for animations
-- **Next.js Image Optimization**
-- **Google Fonts (Poppins)**
+- **Shadcn/ui for  building the component library**
+- **Magic UI for components**
 - **Lucide Icons**
 
 ---
