@@ -9,36 +9,33 @@ import { ArrowRight } from "lucide-react"
 
 const blogPosts = [
   {
-    title: "Building Modern Web Applications with Next.js 15",
+    id: "ai-hype-cycle",
+    title: "The AI Hype Cycle: Cutting Through the Noise and Finding Real Value",
     excerpt:
-      "Explore the new features and improvements in Next.js 15 and how they can enhance your development workflow.",
-    date: "Mar 15, 2024",
-    readTime: "5 min read",
-    image: "/blog/blog-1.png?height=400&width=600",
-    slug: "/blog/building-modern-web-applications",
+      "AI is surrounded by buzz and misinformation—learn how to separate the hype from real-world applications that can actually benefit your business.",
+    image: "/blog/blog-1-sm.png?height=400&width=600",
+    category: "AI Strategy",
   },
   {
-    title: "Designing with Apple's Philosophy in Mind",
-    excerpt:
-      "Learn how to apply Apple's design principles to create beautiful, intuitive, and functional web experiences.",
-    date: "Mar 10, 2024",
-    readTime: "7 min read",
-    image: "/blog/blog-2.png?height=400&width=600",
-    slug: "/blog/designing-with-apples-philosophy",
+    id: "is-ai-right-for-your-business",
+    title: "Is AI Right for Your Business? How to Determine If (and Where) AI Can Help",
+    excerpt: "Not every business needs AI—use this guide to assess your readiness, explore practical use cases, and avoid costly mistakes..",
+    image: "/blog/blog-3-sm.png?height=400&width=600",
+    category: "AI Assessment",
   },
   {
-    title: "Optimizing Performance in React Applications",
-    excerpt: "Discover techniques and best practices for improving the performance of your React applications.",
-    date: "Mar 5, 2024",
-    readTime: "6 min read",
-    image: "/blog/blog-3.png?height=400&width=600",
-    slug: "/blog/optimizing-performance-react-applications",
+    id: "smart-approach-to-ai",
+    title: "The Smart Approach to AI: Why Strategy Comes Before Implementation",
+    excerpt:
+      "Jumping into AI without a clear plan leads to wasted time and money—discover why a strategic approach is essential before adopting AI tools.",
+    image: "/blog/blog-2-sm.png?height=400&width=600",
+    category: "AI Implementation",
   },
 ]
 
 export default function Blog() {
   return (
-    <section className="py-24 relative">
+    <section id="blog" className="py-24 relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2
@@ -90,7 +87,7 @@ export default function Blog() {
               </CardContent>
               <CardFooter className="mt-auto pt-4">
                 <Link
-                  href={post.slug}
+                  href={`/blog/${post.id}`}
                   className="text-blue-violet hover:text-electric-cyan transition-colors flex items-center"
                 >
                   Read more <ArrowRight className="ml-2 h-4 w-4" />

@@ -1,9 +1,15 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { StarBorder } from "@/components/ui/star-border"
+import { trackEvent } from "@/lib/analytics"
+import Link from "next/link"
 
 export default function Cta() {
+  const handleCtaClick = () => {
+    trackEvent("cta_button_clicked", { section: "main_cta" })
+  }
+
   return (
     <section className="py-24 relative">
       <div className="container-custom relative z-10">
@@ -14,7 +20,7 @@ export default function Cta() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <div className="p-8 md:p-12 text-center bg-gradient-to-b from-russian-violet/30 to-rich-black rounded-xl">
+          <div className="p-8 md:p-12 text-center bg-gradient-to-b from-russian-violet/60 to-rich-black rounded-xl">
             <motion.h3
               className="text-2xl md:text-3xl font-semibold mb-4"
               initial={{ opacity: 0, y: 20 }}
@@ -51,12 +57,11 @@ export default function Cta() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex justify-center"
             >
-              <div className="flex items-center justify-center">
-              <button className="cta-button">
-                Book Your Free AI Strategy Call
-              </button>
-              </div>
+              <StarBorder as={Link} href="/booking" onClick={handleCtaClick}>
+                Book Your Free AI Discovery Call
+              </StarBorder>
             </motion.div>
           </div>
         </motion.div>

@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils"
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Blog", href: "/blog" },
+  { name: "About", href: "/#about" },
+  { name: "Services", href: "/#services" },
+  { name: "Blog", href: "/#blog" },
 ]
 
 export default function Header() {
@@ -53,7 +53,9 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <Button>Get a Free Consultation</Button>
+          <Button asChild>
+            <Link href="/booking">Get a Free Consultation</Link>
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -82,9 +84,9 @@ export default function Header() {
                     {item.name}
                   </Link>
                 ))}
-                <Button size="lg" onClick={() => setIsOpen(false)}>
-                  Get a Free Consultation
-                </Button>
+          <Button asChild>
+            <Link href="/booking">Get a Free Consultation</Link>
+          </Button>
               </div>
             </motion.div>
           )}

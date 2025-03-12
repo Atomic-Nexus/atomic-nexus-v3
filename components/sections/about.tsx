@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section className="py-24 relative">
+    <section id="about" className="py-24 relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2

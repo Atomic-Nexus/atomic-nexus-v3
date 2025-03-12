@@ -68,12 +68,6 @@
   }
 }
 
-@property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
 @layer components {
   .container-custom {
     @apply container mx-auto px-4 md:px-8;
@@ -102,31 +96,4 @@
   .gradient-text {
     @apply bg-gradient-to-r from-blue-violet via-electric-cyan to-neon-magenta text-transparent bg-clip-text;
   }
-
-  .cta-button {
-    @apply px-10 py-5 text-xl font-semibold text-white rounded-lg cursor-pointer 
-           transition-colors duration-300 ease-in-out border border-transparent
-           animate-gradient-angle;
-    background-image: linear-gradient(#030014, #190e36),
-      conic-gradient(
-        from var(--gradient-angle),
-        #584827 0%,
-        #c7a03c 37%,
-        #f9de90 30%,
-        #c7a03c 33%,
-        #584827 40%,
-        #584827 50%,
-        #c7a03c 77%,
-        #f9de90 80%,
-        #c7a03c 83%,
-        #584827 90%
-      );
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-  }
-
-  .cta-button:hover {
-    @apply text-[#ffb800];
-  }
 }
-

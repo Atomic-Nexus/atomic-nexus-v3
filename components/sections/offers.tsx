@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { BookOpen, Lightbulb, CheckCircle2, Users, Zap, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 // Particles component using Tailwind CSS
 const Particles = () => {
@@ -93,9 +94,11 @@ const ServiceCard = ({
           <div>
             <p className="text-white italic mb-4">{footerText}</p>
             {buttonText && (
-              <Button variant="destructive" className="flex items-center">
+              <Button variant="destructive" className="flex items-center" asChild>
+                <Link href="/booking">
                 <span>{buttonText}</span>
                 <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             )}
           </div>
@@ -214,7 +217,7 @@ export default function Offers() {
   ]
 
   return (
-    <section className="py-24 relative">
+    <section id="offers" className="py-24 relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2

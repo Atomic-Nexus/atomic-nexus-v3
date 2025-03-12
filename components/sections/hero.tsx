@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import BinarySphere from "../animations/binary-sphere"
 import Particles from "../animations/particles"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -48,7 +49,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Button size="lg">Get a Free Consultation</Button>
+            <Button size="lg" asChild>
+              <Link href="/booking">Get a Free Consultation</Link>
+            </Button>
           </motion.div>
         </motion.div>
 
