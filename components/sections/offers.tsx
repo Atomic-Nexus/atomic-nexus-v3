@@ -106,8 +106,8 @@ const ServiceCard = ({
 
         {/* Right Column - Image */}
         <div className="flex items-center justify-center h-full p-8">
-          <div className="relative h-[500px] w-[500px]">
-            <Image src={imageSrc || "/placeholder.svg"} alt={imageAlt} fill className="object-cover" sizes="500px" />
+          <div className="relative h-[400px] w-[400px]">
+            <Image src={imageSrc || "/placeholder.svg"} alt={imageAlt} fill className="object-cover" sizes="400px" />
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function Offers() {
         "Actionable strategies to future-proof your business with AI",
       ],
       footerText: "Stay informed, stay ahead—learn how AI can work for you.",
-      imageSrc: "/AI-brain.png?height=400&width=400",
+      imageSrc: "/services-1.png?height=400&width=400",
       imageAlt: "AI Education",
     },
     {
@@ -186,7 +186,7 @@ export default function Offers() {
       ],
       footerText: "AI is not a one-size-fits-all solution. Get expert guidance before making your next move.",
       buttonText: "Book a Free Discovery Call",
-      imageSrc: "/AI-globe.png?height=400&width=400",
+      imageSrc: "/services-2.png?height=400&width=400",
       imageAlt: "AI Consulting",
     },
     {
@@ -211,7 +211,7 @@ export default function Offers() {
         "Ongoing strategic oversight so AI aligns with your goals",
       ],
       footerText: "I help you craft the strategy, and my expert partners bring it to life.",
-      imageSrc: "/Network.png?height=400&width=400",
+      imageSrc: "/services-3.png?height=400&width=400",
       imageAlt: "AI Partners",
     },
   ]

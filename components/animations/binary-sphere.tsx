@@ -1,13 +1,32 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import * as THREE from "three"
+import Image from "next/image"
 
 export default function BinarySphere() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768) // Standard md breakpoint
+    }
+
+    // Initial check
+    checkMobile()
+
+    // Add event listener for resize
+    window.addEventListener("resize", checkMobile)
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
-    if (!containerRef.current) return
+    // Skip initialization if on mobile
+    if (isMobile || !containerRef.current) return
 
     let renderer: THREE.WebGLRenderer | null = null
     let scene: THREE.Scene | null = null
@@ -250,7 +269,7 @@ export default function BinarySphere() {
       particles = null
       innerParticles = null
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <div
@@ -258,7 +277,22 @@ export default function BinarySphere() {
       className="w-full h-full min-h-[400px] md:min-h-[500px]"
       aria-hidden="true"
       style={{ position: "relative" }}
-    />
+    >
+      {
+        isMobile ? (
+          <div className="w-full h-full flex items-center justify-center">
+            <Image
+              src="/hero-pic.png"
+              alt="AI Visualization"
+              width={500}
+              height={400}
+              className="w-full h-auto object-contain"
+              priority
+            />
+          </div>
+        ) : null /* The canvas will be added by the useEffect when not on mobile */
+      }
+    </div>
   )
 }
 
