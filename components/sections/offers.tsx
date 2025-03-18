@@ -54,7 +54,7 @@ const ServiceCard = ({
     <div className="bg-russian-violet/60 border border-[rgba(255,184,0,0.3)] rounded-xl overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column - Content */}
-        <div className="p-8">
+        <div className="p-6 md:p-8">
           {/* Icon and Title */}
           <div className="mb-6">
             <div className={`inline-flex p-3 ${iconBgClass} rounded-lg mb-4`}>
@@ -105,9 +105,15 @@ const ServiceCard = ({
         </div>
 
         {/* Right Column - Image */}
-        <div className="flex items-center justify-center h-full p-8">
-          <div className="relative h-[400px] w-[400px]">
-            <Image src={imageSrc || "/placeholder.svg"} alt={imageAlt} fill className="object-cover" sizes="400px" />
+        <div className="flex items-center justify-center h-full p-4 md:p-8">
+          <div className="relative w-full max-w-[280px] h-[280px] md:h-[300px] md:w-[300px]">
+            <Image
+              src={imageSrc || "/placeholder.svg"}
+              alt={imageAlt}
+              fill
+              className="object-contain md:object-cover"
+              sizes="(max-width: 768px) 280px, 300px"
+            />
           </div>
         </div>
       </div>
@@ -217,7 +223,7 @@ export default function Offers() {
   ]
 
   return (
-    <section id="offers" className="py-24 relative">
+    <section id="services" className="py-24 relative">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.h2

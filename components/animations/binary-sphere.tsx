@@ -278,20 +278,20 @@ export default function BinarySphere() {
       aria-hidden="true"
       style={{ position: "relative" }}
     >
-      {
-        isMobile ? (
-          <div className="w-full h-full flex items-center justify-center">
+      {isMobile && (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="relative w-full h-[300px] flex items-center justify-center">
             <Image
               src="/hero-pic.png"
               alt="AI Visualization"
-              width={500}
-              height={400}
-              className="w-full h-auto object-contain"
+              width={300}
+              height={300}
+              className="object-contain mx-auto"
               priority
             />
           </div>
-        ) : null /* The canvas will be added by the useEffect when not on mobile */
-      }
+        </div>
+      )}
     </div>
   )
 }

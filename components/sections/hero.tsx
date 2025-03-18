@@ -56,12 +56,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="mt-16 relative w-full max-w-4xl mx-auto aspect-[16/9]"
+          className="mt-8 md:mt-16 relative w-full max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <div className="relative w-full h-full rounded-xl overflow-hidden">
+          <div className="relative w-full h-[400px] md:h-[400px] rounded-xl overflow-hidden">
             <BinarySphere />
           </div>
         </motion.div>
