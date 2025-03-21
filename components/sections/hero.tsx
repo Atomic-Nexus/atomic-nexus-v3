@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-24 overflow-hidden"
       style={{
         backgroundImage: "radial-gradient(circle at center, #190e36 0%, #030014 40%)",
       }}
@@ -56,12 +56,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="mt-8 md:mt-16 relative w-full max-w-4xl mx-auto"
+          className="mt-8 md:mt-16 relative w-full max-w-4xl mx-auto mb-0 md:mb-16"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <div className="relative w-full h-[400px] md:h-[400px] rounded-xl overflow-hidden">
+          <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden">
             <BinarySphere />
           </div>
         </motion.div>

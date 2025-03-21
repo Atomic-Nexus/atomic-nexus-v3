@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container-custom">
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-16 mb-12">
           <div className="flex flex-col max-w-xs text-center md:text-left">
-            <Link href="/" className="mb-4">
+          <Link href="/" className="mb-4 mx-auto md:mx-0">
               <Image src="/logo-blue.svg" alt="Atomic Nexus" width={150} height={40} className="h-10 w-auto" />
             </Link>
             <p className="text-cool-gray mb-6">

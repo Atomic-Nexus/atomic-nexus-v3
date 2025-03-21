@@ -106,7 +106,7 @@ const ServiceCard = ({
 
         {/* Right Column - Image */}
         <div className="flex items-center justify-center h-full p-4 md:p-8">
-          <div className="relative w-full max-w-[280px] h-[280px] md:h-[300px] md:w-[300px]">
+          <div className="relative w-full max-w-[300px] h-[300px] md:h-[300px] md:w-[300px]">
             <Image
               src={imageSrc || "/placeholder.svg"}
               alt={imageAlt}
